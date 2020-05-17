@@ -8,6 +8,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import Wines from './components/wines';
+import Navbar from './components/navbar';
 
 class App extends React.Component {
   constructor(props) {
@@ -75,6 +76,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <Navbar />
   <div className={this.state.scrolled ? 'header-scrolled' : 'header'} id="header">
       <h1>World Wine Search</h1>
       <form onSubmit={this.handleSubmit}>
