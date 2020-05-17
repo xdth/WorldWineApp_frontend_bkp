@@ -9,8 +9,8 @@ const Navbar = () => {
             <div class="container">
         
               {/* Logo */}
-              <a class="navbar-brand" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
-                <strong>MDB</strong>
+              <a class="navbar-brand" href="/" target="_blank">
+                <strong>WorldWineSearch</strong>
               </a>
         
               {/* Collapse */}
@@ -30,13 +30,13 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">About MDB</a>
+                    <a class="nav-link" href="/about" target="_blank">About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="https://mdbootstrap.com/getting-started/" target="_blank">Free download</a>
+                    <a class="nav-link" href="/ranking" target="_blank">Ranking</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank">Free tutorials</a>
+                    <a class="nav-link" href="/countries" target="_blank">Countries</a>
                   </li>
                 </ul>
         

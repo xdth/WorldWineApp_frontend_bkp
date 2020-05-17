@@ -78,7 +78,6 @@ class App extends React.Component {
       <>
       <Navbar />
   <div className={this.state.scrolled ? 'header-scrolled' : 'header'} id="header">
-      <h1>World Wine Search</h1>
       <form onSubmit={this.handleSubmit}>
         <label>
           <input type="text" className={'search-wine'} value={this.state.title} onChange={this.handleChangeTitle} placeholder="Search for a wine" />
