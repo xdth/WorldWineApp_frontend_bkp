@@ -24,6 +24,7 @@ class App extends React.Component {
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleChangeCountry = this.handleChangeCountry.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeScroll = this.handleChangeScroll.bind(this);
   }
 
 
@@ -60,7 +61,7 @@ class App extends React.Component {
         
   }
   
-  componentDidMount(){      
+  handleChangeScroll(event) {      
     window.addEventListener('scroll',() => {
       const isTop = window.scrollY < 50;
       if(isTop !== true) {
@@ -71,11 +72,15 @@ class App extends React.Component {
     })
   }
 
+  componentDidMount(){
+    this.handleChangeScroll();
+  }
+
   
   render() {
     return (
       <>
-      <Navbar  state={this.state} />
+      <Navbar state={this.state} />
       <div className="container-fluid">
       <div className={this.state.scrolled ? 'header header-scrolled' : 'header header-unscrolled'} id="header">
           <form className="form-inline" onSubmit={this.handleSubmit}>

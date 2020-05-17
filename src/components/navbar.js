@@ -1,16 +1,6 @@
 import React from 'react'
 
 class Navbar extends React.Component {
-    constructor(props) {
-        super(props);
-        //this.handleChange = this.handleChange.bind(this);
-        let x = props.scrolled == true ? "true" : "false";
-        console.log("state is: " + x);
-    }
-    
-    handleChange(e) {
-        //this.props.onTemperatureChange(e.target.value);  
-    }
 
     render() {
 
@@ -18,12 +8,13 @@ class Navbar extends React.Component {
         <>
         {/* Navbar */}
         {/* <nav className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"> */}
-        <nav className="navbar fixed-top navbar-dark scrolling-navbar">
+        
+        <nav className={this.props.state.scrolled ? 'navbar fixed-top navbar-dark scrolling-navbar' : 'navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar'}>
             <div className="container">
         
               {/* Logo */}
               <a className="navbar-brand" href="/" target="_blank">
-                <strong>WorldWineSearch{this.props.scrolled ? 'header header-scrolled' : 'header header-unscrolled'}</strong>
+                <strong>WorldWineSearch{this.props.state.scrolled ? 'header header-scrolled' : 'header header-unscrolled'}</strong>
               </a>
         
               {/* Collapse */}
