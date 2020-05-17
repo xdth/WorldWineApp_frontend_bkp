@@ -5,8 +5,9 @@ const Navbar = () => {
 
         <>
         {/* Navbar */}
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-            <div class="container">
+        {/* <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"> */}
+        <nav class="navbar fixed-top navbar-dark scrolling-navbar">
+            <div className="container">
         
               {/* Logo */}
               <a class="navbar-brand" href="/" target="_blank">
@@ -25,18 +26,11 @@ const Navbar = () => {
                 {/* Left */}
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/about" target="_blank">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/ranking" target="_blank">Ranking</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/countries" target="_blank">Countries</a>
+                      {/*
+                        <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                        </a>
+                     */}
                   </li>
                 </ul>
         
@@ -48,10 +42,13 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link border border-light rounded"
-                      target="_blank">
-                      <i class="fab fa-github mr-2"></i>GitHub
-                    </a>
+                    <a class="nav-link" href="/ranking" target="_blank">Ranking</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/countries" target="_blank">Countries</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about" target="_blank">About</a>
                   </li>
                 </ul>
         
