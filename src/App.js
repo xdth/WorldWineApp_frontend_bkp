@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import Wines from './components/wines';
+import Navbar from './components/navbar';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +24,7 @@ class App extends React.Component {
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleChangeCountry = this.handleChangeCountry.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeScroll = this.handleChangeScroll.bind(this);
   }
 
 
@@ -54,7 +61,7 @@ class App extends React.Component {
         
   }
   
-  componentDidMount(){      
+  handleChangeScroll(event) {      
     window.addEventListener('scroll',() => {
       const isTop = window.scrollY < 50;
       if(isTop !== true) {
@@ -62,33 +69,39 @@ class App extends React.Component {
       } else {
         this.setState({scrolled: false});
       }
-    });
-      
+    })
+  }
+
+  componentDidMount(){
+    this.handleChangeScroll();
   }
 
   
   render() {
     return (
       <>
-  <div className={this.state.scrolled ? 'header-scrolled' : 'header'} id="header">
-      <h1>World Wine Search</h1>
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input type="text" className={'search-wine'} value={this.state.title} onChange={this.handleChangeTitle} placeholder="Search for a wine" />
-        </label>
-        <label>
-          <input type="text" className={'search-country'} value={this.state.country} onChange={this.handleChangeCountry} placeholder="Country" />
-        </label>
-        <button type="submit" value="Submit" class="btn-search">
-              <svg xmlns="http://www.w3.org/2000/svg" width="75%" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-              </svg>
-        </button>
-      </form>    
-  </div>
+      <Navbar state={this.state} />
+      <div className="container-fluid">
+      <div className={this.state.scrolled ? 'header header-scrolled' : 'header header-unscrolled'} id="header">
+          <form className="form-inline" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <input type="text" className={'search-wine'} value={this.state.title} onChange={this.handleChangeTitle} placeholder="Search for a wine" />
+          </div>
+          <div className="form-group">
+              <input type="text" className={'search-country'} value={this.state.country} onChange={this.handleChangeCountry} placeholder="Country" />
+          </div> 
+          <div className="form-group">         
+            <button type="submit" value="Submit" className="btn-search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="75%" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                  </svg>
+            </button>
+          </div>  
+          </form>    
+      </div>{/* container */}
 
-
-  <Wines wines={this.state.wines} />
+      <Wines wines={this.state.wines} />
+      </div>
 
   
 

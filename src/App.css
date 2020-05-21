@@ -1,3 +1,18 @@
+/* navbar */
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+      background: red!important;
+  }
+}
+.view,body,html{height:100%}
+.navbar{background-color:rgba(0,0,0,.2)}
+.page-footer,
+.top-nav-collapse{background-color:gray}
+@media only screen and (max-width:768px){.navbar{background-color:purple}}
+
+
+
 /* scroll search */
 body { 
   margin: 0;
@@ -6,10 +21,7 @@ body {
 
 .header {
   background-color: #f1f1f1;
-  padding: 250px 250px;
-  color: black;
   text-align: center;
-  font-size: 1.2em; 
   font-weight: bold;
   position: fixed;
   top: 0;
@@ -21,25 +33,22 @@ body {
   background-image: url("/images/wine4.jpg");
 }
 
+.header-unscrolled {
+  padding: 250px 250px;
+  font-size: 1.2em; 
+}
+
 .header-scrolled {
-  background-color: red;
-  padding: 5px 5px;
-  color: black;
-  text-align: center;
+  padding: 10px 5px;
   font-size: 0.7em; 
-  font-weight: bold;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  transition: 0.5s;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;  
-  background-image: url("/images/wine4.jpg");
 }
 
 .header-scrolled button {
   width: 3%;
+}
+
+.container-fluid {
+  padding:0 0 0 0;
 }
 
 .content {
@@ -74,4 +83,10 @@ input,button {
 
 button {
   width: 50px;
+}
+
+/* form */
+form {
+  margin-top: 50px;
+  text-align: center;
 }
